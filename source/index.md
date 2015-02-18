@@ -1,4 +1,4 @@
-﻿---
+---
 title: Proxyclick API Reference
 
 language_tabs:
@@ -8,6 +8,7 @@ language_tabs:
 
 toc_footers:
   - <a href='https://api.proxyclick.com/v1/docs'>Documentation Powered by Proxyclick</a>
+
 includes:
   - meeting
   - visitor
@@ -27,28 +28,10 @@ You can view code examples (in Shell, Python and PHP) in the dark area to the ri
 
 This part will explain shortly how the API needs to be consumed
 
+
 # Authentication
 
-> To authorize, use this code:
-
-
-```shell
-curl "api_endpoint_here"
-  -H "Authorization: Bearer <accessToken>"
-```
-
-```python
-curl "api_endpoint_here"
-  -H "Authorization: Bearer <accessToken>"
-```
-
-```php
-curl "api_endpoint_here"
-  -H "Authorization: Bearer <accessToken>"
-```
-
-> Make sure to replace `<accessToken>` with your access token.
-
+This section describes the authentication needed to be able to use the api
 
 Proxyclick expects for the access token to be included in all API requests to the server in a header that looks like the following:
 
@@ -57,4 +40,10 @@ Proxyclick expects for the access token to be included in all API requests to th
 <aside class="notice">
 You must replace `<accessToken>` with your personal access token.
 </aside>
+
+<aside class="success">Remember — a happy kitten is an authenticated kitten!</aside>
+
+<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
+
+
 
