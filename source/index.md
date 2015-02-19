@@ -41,9 +41,6 @@ Proxyclick expects for the access token to be included in all API requests to th
 You must replace `<accessToken>` with your personal access token.
 </aside>
 
-<aside class="success">Remember — a happy kitten is an authenticated kitten!</aside>
-
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
 
 
 
