@@ -318,7 +318,7 @@ This endpoint retrieves all meetings of a company.
 
 ### HTTP Request
 
-`GET https:/api.proxyclick.com/v1/app/<companyId>/vm/meetings`
+`GET https:/api.proxyclick.com/v1/app/<companyId>/vm/meetings?from=<startDate>&to=<endDate>`
 
 ### URL Parameters
 
