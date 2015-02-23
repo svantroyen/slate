@@ -1,6 +1,5 @@
 # Errors
-
-The Proxyclick API uses HTTP responses to indicate success or error of API requests. While not all codes listed below are used, some may be used in the future. 
+The Proxyclick API uses HTTP responses to indicate the success or failure or an error of API requests. While not all codes listed below are used, some may be used in the future. 
 Note that 4xx and 5xx responses may be returned for any request and clients should cater for them.
 
 Error Code | Meaning

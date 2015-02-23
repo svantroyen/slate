@@ -31,7 +31,7 @@ This part will explain shortly how the API needs to be consumed
 
 # Authentication
 
-This section describes the authentication needed to be able to use the api
+This section describes the authentication needed to be able to use the API
 
 Proxyclick expects for the access token to be included in all API requests to the server in a header that looks like the following:
 

@@ -333,7 +333,7 @@ This endpoint retrieves all tickets of a company.
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-companyId | true | string | The id of the company for which the tickets need to be retrieved
+companyId | true | string | The id of the company from which the tickets need to be retrieved
 
 
 ### Body Parameters
@@ -350,7 +350,6 @@ agentId | false | string| the id of the agent assigned to the ticket
 priority | false | numeric | the priority of the ticket
 category | false | numeric | the category of the ticket 
 supplierId | false | string | the id of the supplier of the ticket
-mode | false | string | if specified to "me", the list will only contain the tickets created by the current user (not really in situation of api use right???)
 dueDateFrom | false | date | the result will only include tickets with due date starting from this date
 dueDateTo | false | date | the result will only include tickets with due date ending at this date
 
@@ -527,7 +526,7 @@ This endpoint retrieves a specific ticket.
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 companyId | true | string | The id of the company for which the meeting needs to be retrieved
-ticketId | true | string | The ID of the ticket to retrieve
+ticketId | true | string | The id of the ticket to retrieve
 
 
 ## Create a ticket
@@ -712,7 +711,7 @@ $result = file_get_contents($url, false, $context);
 }
 ```
 
-This endpoint creates a new ticket and retrieve the newly created ticket.
+This endpoint creates a new ticket and retrieves the newly created ticket.
 
 ### HTTP Request
 

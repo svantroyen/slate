@@ -743,10 +743,10 @@ phone | false | string | the visitor's phone number (international format)
 mobile | false | string | the visitor's mobile number (international format)
 companyName | false | string | the visitor's company name
 function | false | string | the visitor's function
-language | false | string | the visitor's language (must be one of the available languages of application) 
+language | false | string | the visitor's language (must be one of the available languages supported by the Proxyclick application)
 licensePlate | false | string | the visitor's car license plate
 about | false | string | some information about the visitor
-smsReminder | false | boolean | flag to send sms invitation to visitor (only if mobile number is filled in)
+smsReminder | false | boolean | flag to send SMS invitation to visitor (only if mobile number is filled in)
 mailReminder | false | boolean | flag to send email invitation to visitor (only if email address is filled in)
 
 > Example of a visitors' array
