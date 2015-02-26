@@ -295,16 +295,6 @@ curl_close($curl);
     "recurrence": null,
     "timezone": "Europe/Brussels",
     "createdAt": "2015-02-18T14:57:32Z",
-    "createdBy": {
-        "type": "USER",
-        "object": "user",
-        "id": "US-G606",
-        "name": "Jordan Gray"
-    },
-    "createdVia": {
-        "type": "APPLICATION",
-        "name": "Proxyclick customer application"
-    },
     "lastModifiedAt": "2015-02-18T14:57:30Z",
     "checkinNotificationType": "FIRST_LAST",
     "checkinNotificationUsers": null,
