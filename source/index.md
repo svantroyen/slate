@@ -3,9 +3,7 @@ title: Proxyclick API Reference
 
 language_tabs:
   - shell
-  - python
-  - php
-
+  
 toc_footers:
   - <a href='https://api.proxyclick.com/v1/docs'>Documentation Powered by Proxyclick</a>
   - <a href='https://www.proxyclick.com/api-access-request'>Request API access</a>

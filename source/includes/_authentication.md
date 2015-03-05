@@ -15,8 +15,6 @@ Request an access token by posting clientId, clientSecret, userName, password an
 
 ### HTTP Request
 
-`POST https:/api.proxyclick.com/oauth/token`
-
 ```shell
 $ curl https:/api.proxyclick.com/oauth/token \
 -X POST \
@@ -29,7 +27,73 @@ $ curl https:/api.proxyclick.com/oauth/token \
    "password": "",
    "grant_type": "password"
 }'
-```  
+
+Response
+
+HTTP/1.1 200 Ok
+
+{
+  "access_token" : token,
+  "token_type" : "Bearer"
+}
+
+AuthenticationException
+
+HTTP/1.1 401 Unauthorized
+
+{
+  "error" : "invalid_client",
+  "error_description" : error_message	
+}
+
+InvalidGrantException
+
+HTTP/1.1 400 Bad Request
+
+{
+  "error" : "invalid_grant",
+  "error_description" : error_message	
+}
+
+UnauthorizedClientException
+
+HTTP/1.1 400 Bad Request
+
+{
+  "error" : "unauthorized_client"
+}
+
+UnsupportedGrantTypeException
+
+HTTP/1.1 400 Bad Request
+
+{
+  "error" : "unsupported_grant_type"
+}
+
+InvalidRequestException
+
+HTTP/1.1 400 Bad Request
+
+{
+  "error" : "invalid_request",
+  "error_description" : error_message	
+}
+```
+
+`POST https:/api.proxyclick.com/oauth/token`
+
+### Body parameters
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+clientId | true | string | The clientId defined when application was registered
+clientSecret | true | string | The clientSecret defined when application was registered
+userName | true | string | The user name to authenticate with
+password | true | string | The password to authenticate with
+grant_type | true | string |value is "password"
+  
+
 
 ## Verifying an access token
 
@@ -38,7 +102,7 @@ Tokens received from the API MUST be explicitly validated. Failure to verify tok
 When verifying a token, it is critical to ensure the audience field in the response exactly matches the clientId that you obtained when registering your application. It is absolutely vital to perform this step, because it is the mitigation for the confused deputy issue. 
 
 Verify an access token validity by sending the token to "https://api.proxyclick.com/oauth/verify".
-POST and GET verbs are accepted for this request.
+POST and GET are accepted verbs for this request.
 
 ### HTTP GET Request
 
@@ -63,8 +127,29 @@ $ curl https:/api.proxyclick.com/oauth/verify \
 -H 'Accept: application/json' \
 -H 'Content-Type: application/json' -d '
 {
-   "token": ""
+   "token": "<accesstoken>"
 }'
+
+Response
+
+HTTP/1.1 200 Ok
+
+{
+   "audience": "<clientId>"
+}
+
+HTTP/1.1 400 Bad Request
+
+{
+  "error" : "invalid_token"
+}
+
+HTTP/1.1 400 Bad Request
+
+{
+  "error" : "invalid_request",
+  "error_description" : error_message
+}
 ```
 
 `POST https:/api.proxyclick.com/oauth/verify`
@@ -75,24 +160,28 @@ Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 token | true | string | The token to be verified 
 
-### Response
-
-HTTP/1.1 200 Ok
-
-`{
-   "audience": ""
-}`
 
 ## Revoking an access token
 
 Revoke an access token by sending it to "https://api.proxyclick.com/oauth/revoke".
-POST and GET verbs are accepted for this request.
+POST and GET are accepted verbs for this request.
    
-### HTTP Request
+### HTTP GET Request
+
+```shell
+$ curl https:/api.proxyclick.com/oauth/revoke?token=<accesstoken> \
+```
 
 `GET https:/api.proxyclick.com/oauth/revoke?token=<accesstoken>`
 
-`POST https:/api.proxyclick.com/oauth/token`
+### Query parameters
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+token | true | string | The token to be revoked
+
+
+### HTTP POST Request
 
 ```shell
 $ curl https:/api.proxyclick.com/oauth/revoke \
@@ -100,9 +189,37 @@ $ curl https:/api.proxyclick.com/oauth/revoke \
 -H 'Accept: application/json' \
 -H 'Content-Type: application/json' -d '
 {
-   "token": ""
+   "token": "<accesstoken>"
 }'
-``` 
+Response
+
+HTTP/1.1 204
+
+{
+}
+
+HTTP/1.1 400 Bad Request
+
+{
+  "error" : "invalid_token"
+}
+
+HTTP/1.1 400 Bad Request
+
+{
+  "error" : "invalid_request",
+  "error_description" : error_message
+}
+```
+
+`POST https:/api.proxyclick.com/oauth/revoke`
+
+### Body parameters
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+token | true | string | The token to be revoked
+
 
 ## API Requests
 
