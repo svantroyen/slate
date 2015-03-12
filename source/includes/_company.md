@@ -47,6 +47,6 @@ lastModifiedAt | timestamp | the last modification date of the company
 countryCode | string | the code of the country of the company
 latitude | string | the latitude of the company's office
 longitude | string | the longitude of the company's office
-status | string | the status of the company (it can be 'ACTIVATED','DEACTIVATED','PENDING')
+status | string | the status of the company (values can be 'ACTIVATED','DEACTIVATED','PENDING')
 
 

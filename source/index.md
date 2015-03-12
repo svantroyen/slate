@@ -14,8 +14,8 @@ includes:
   - visit
   - visitor
   - company	
-  - errors
-  - version
+  - errors  
+
 
 ---
 
